@@ -1,0 +1,229 @@
+body {
+    background-color: #222222;
+    background-image: url(https://cdn.discordapp.com/attachments/936750465562083384/1155743679160528988/background.gif);
+    background-size: cover;
+    margin: 0px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: white;
+}
+
+h1 {
+    margin: 0px;
+    color: white;
+    text-align: center;
+    font: 5rem "Fira Sans", sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0px;
+    color: white;
+    text-align: center;
+    font: 1.5rem "Fira Sans", sans-serif;
+    font-weight: bold;
+}
+
+button {
+    background-color: transparent;
+    border: solid white;
+    color: white;
+    font-size: 1.25rem;
+}
+
+button:hover {
+    background-color: #ffffff60;
+}
+
+button:active {
+    background-color: #ffffff80;
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+footer {
+    padding-top: 5px;
+    text-align: center;
+}
+
+.shadow {
+    background-color: #000000d0;
+    padding: 5px;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "portfolio portfolio portfolio"
+        "trainSchedule trainSchedule contact"
+        "aL aL screenSaver"
+        "sorting sorting screenSaver";
+}
+
+.portfolio {
+    grid-area: portfolio;
+    background-color: #ffffff20;
+}
+
+.contact {
+    grid-area: contact;
+    display: none;
+}
+
+.trainSchedule {
+    grid-area: trainSchedule;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 5px;
+}
+
+.aL {
+    grid-area: aL;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px 0px;
+}
+
+.sorting {
+    grid-area: sorting;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px 0px;
+}
+
+.screenSaver {
+    grid-area: screenSaver;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+}
+
+.blowUp {
+    animation-duration: 6s;
+    animation-name: boom;
+}
+
+@keyframes boom {
+    from {
+      transform: scale(1) rotateX(0deg) rotateY(0deg)  translateY(0) translateX(-5px); 
+    }
+  
+    to {
+        transform: scale(1.05) rotateX(180deg) rotateY(45deg) translateY(-4000px) translateX(5px);
+    }
+
+}
+
+.rightSided {
+    margin-left: 5px;
+    color: white;
+    font: 1rem "Fira Sans", sans-serif;
+}
+
+.leftSided {
+    color: white;
+    font: 1rem "Fira Sans", sans-serif;
+}
+
+.upSided {
+    margin-left: 5px;
+    color: white;
+    font: 1rem "Fira Sans", sans-serif;   
+}
+
+.contactLinks {
+    color: white;
+    text-align: center;
+}
+
+.aL, .trainSchedule, .screenSaver, .sorting, .contact, .portfolio {
+    transition: all 1s;
+    background-color: #ffffff20;
+    padding: 10px;
+    display: grid;
+}
+
+.aL:hover, .trainSchedule:hover, .screenSaver:hover, .sorting:hover, .contact:hover, .portfolio:hover {
+    background-color: #ffffff40;
+    transform: scale(1.005);
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "portfolio"
+            "contact"
+            "trainSchedule"
+            "aL"
+            "sorting"
+            "screenSaver";
+    }
+
+    .screenSaver {
+        grid-area: screenSaver;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "portfolio"
+            "contact"
+            "trainSchedule"
+            "aL"
+            "sorting"
+            "screenSaver";
+    }
+
+    .trainSchedule {
+        grid-area: trainSchedule;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+
+    .aL {
+        grid-area: aL;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+
+    .sorting {
+        grid-area: sorting;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+
+    .screenSaver {
+        grid-area: screenSaver;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+}
