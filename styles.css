@@ -67,6 +67,9 @@ footer {
     grid-template-areas:
         "portfolio portfolio portfolio"
         "trainSchedule trainSchedule contact"
+        "rocket bluejelly bluejelly"
+        "rocket bluejelly bluejelly"
+        "break break break"
         "aL aL screenSaver"
         "sorting sorting screenSaver";
 }
@@ -75,6 +78,12 @@ footer {
     grid-area: portfolio;
     background-color: #ffffff20;
 }
+
+.break {
+    grid-area: break;
+    background-color: #ffffff20;
+}
+
 
 .contact {
     grid-area: contact;
@@ -103,6 +112,47 @@ footer {
     grid-area: screenSaver;
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
+}
+
+.rocket {
+    grid-area: rocket;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;    
+}
+
+.bluejelly {
+    grid-area: bluejelly;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "desc sub"
+        "pic sub "
+}
+
+.sub {
+    grid-area: sub;
+    gap: 0px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+    text-align: center; 
+    color: #fff;
+    font: 1rem "Fira Sans", sans-serif; 
+}
+
+.pic {
+    grid-area: pic;
+    gap: 0px; 
+
+}
+
+.desc {
+    grid-area: desc;
+    gap: 0px; 
+    margin-left: 5px;
+    color: white;
+    font: 1rem "Fira Sans", sans-serif;   
 }
 
 .blowUp {
@@ -143,14 +193,14 @@ footer {
     text-align: center;
 }
 
-.aL, .trainSchedule, .screenSaver, .sorting, .contact, .portfolio {
+.aL, .trainSchedule, .screenSaver, .sorting, .contact, .portfolio, .rocket, .bluejelly, .break {
     transition: all 1s;
     background-color: #ffffff20;
     padding: 10px;
     display: grid;
 }
 
-.aL:hover, .trainSchedule:hover, .screenSaver:hover, .sorting:hover, .contact:hover, .portfolio:hover {
+.aL:hover, .trainSchedule:hover, .screenSaver:hover, .sorting:hover, .contact:hover, .portfolio:hover, .rocket:hover, .bluejelly:hover,.break:hover{
     background-color: #ffffff40;
     transform: scale(1.005);
 }
@@ -165,6 +215,9 @@ footer {
             "portfolio"
             "contact"
             "trainSchedule"
+            "bluejelly"
+            "rocket"
+            "break"
             "aL"
             "sorting"
             "screenSaver";
@@ -172,6 +225,14 @@ footer {
 
     .screenSaver {
         grid-area: screenSaver;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+
+    .rocket {
+        grid-area: rocket;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: none;
@@ -187,12 +248,15 @@ footer {
         gap: 10px 0px;
         grid-auto-flow: row;
         grid-template-areas:
-            "portfolio"
-            "contact"
-            "trainSchedule"
-            "aL"
-            "sorting"
-            "screenSaver";
+        "portfolio"
+        "contact"
+        "trainSchedule"
+        "bluejelly"
+        "rocket"
+        "break"
+        "aL"
+        "sorting"
+        "screenSaver";
     }
 
     .trainSchedule {
@@ -225,5 +289,25 @@ footer {
         grid-template-columns: none;
         grid-template-rows: none;
         gap: 0px 0px;
+    }
+
+    .rocket {
+        grid-area: rocket;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 0px 0px;
+    }
+
+    .bluejelly {
+        grid-area: bluejelly;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        gap: 10px 0px;
+        grid-template-areas:
+        "desc"
+        "sub"
+        "pic"
     }
 }

@@ -7,7 +7,7 @@ console.log("hello");
 function boom() {
     window.prompt("What's the Password?","password");
     alert("Close enough");
-    let list = ["screenSaver","aL","sorting","trainSchedule","portfolio","contact"]
+    let list = ["screenSaver","aL","sorting","trainSchedule","portfolio","contact","rocket","bluejelly","break"]
     for (let ele of list)
         document.getElementById(ele).classList.add("blowUp");
     document.getElementById("foot").removeChild(document.getElementById("boom"))
