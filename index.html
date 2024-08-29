@@ -1,187 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="cuhph8Rq01ITPXiqWkJ23hKWKjm8c9NUgmXdoQnUYmY" />
-    <script src="boom.js"></script>
+  <script src="./p5.js"></script>
+  <script src="./p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    p {
+      font-size: large;
+    }
+
+    div {
+      background-color: rgba(55, 182, 255, 0.316);
+      width: 50%;
+      padding: 15px;
+    }
+
+    ul {
+      margin: 0px;
+    }
+  </style>
+
 </head>
 
 <body>
-    <div class="shadow">
-        <div class="container">
-            <div id="portfolio" class="portfolio">
-                <h1>Kenji Okura</h1>
-                <h2>- Portfolio -</h2>
-            </div>
-            <div id="contact" class="contact">
-                <h2>Contact</h2>
-                <hr>
-                <img src="images/IMG_6801.JPG">
-                <hr>
-                <div class="contactLinks">
-                    <a href="mailto:ko46117p@pace.edu">E-mail</a> - <a href="https://github.com/OkayKenji/">Personal
-                        GitHub</a> - <a href="https://github.com/okurakeng">Professional GitHub</a> - <a href="https://www.linkedin.com/in/kenji-okura-04966a227/">Linkedin</a>
-                </div>
-            </div>
-            <div id="trainSchedule" class="trainSchedule">
-                <a href="https://okaykenji.github.io/TrainMap/"><img src="images/train.PNG"></a>
-                <div class="rightSided">
-                    <hr>
-                    <h3>Train Schedule Map</h3>
-                    <hr>
-                    <p>A collection of various railroad maps that have connections to New York City. Clicking on a
-                        station displays trains that stop on the day you view the page.</p>
-                    <ul>
-                        <li>
-                            Parsing <a href="https://gtfs.org/">GTFS</a> data provided by various agencies. Adapting as
-                            needed since despite following a standard there are differences.
-                        </li>
-                        <li>
-                            Custom mapping algorithm.
-                        </li>
-                    </ul>
-                    <div class="buttonContainer">
-                        <button onclick="location.href = 'https://okaykenji.github.io/TrainMap/'">View the
-                            Project</button>
-                    </div>
+  <main>
+  </main>
+  <script src="sketch.js"></script>
+  <div>
+    <h1>Hello there!</h1>
+    <p>Nice, to meet you, my name is Kenji Okura.</p>
+    <p>My portfolio is under construction. 🚧🚧🚧</p>
+    <p>Please enjoy the solar system while you wait.</p>
+    <p>Thanks.</p>
 
-                </div>
-
-            </div>
-            <div id="aL" class="aL">
-                <div class="leftSided">
-                    <hr>
-                    <h3>Active Listening</h3>
-                    <hr>
-                    <p>A simple project to explain active listening.</p>
-                    <ul>
-                        <li>
-                            Teaching active listening to improve tutoring skills.
-                        </li>
-                        <li>
-                            Using CSS frame work, namely <a href="https://www.w3schools.com/w3css/">W3.CSS</a>.
-                        </li>
-                    </ul>
-                    <div class="buttonContainer">
-                        <button onclick="location.href = 'https://okurakeng.github.io/ActiveListening/'">View the
-                            Project</button>
-                    </div>
-                </div>
-                <a href="https://okurakeng.github.io/ActiveListening/"><img src="images/active.PNG"></a>
-            </div>
-            <div id="sorting" class="sorting">
-                <a href="https://okaykenji.github.io/Line-Sort-Project/"><img src="images/sort.PNG"></a>
-                <div class="rightSided">
-                    <hr>
-                    <h3>Sorting Algo Demo</h3>
-                    <hr>
-                    <p>A visualizer for various sorting algorithm using <a href="https://p5js.org/">p5.js</a>.</p>
-                    <ul>
-                        <li>
-                            Using code libraries, namely <a href="https://p5js.org/">p5.js</a> and creating friendly UIs
-                            (see <a
-                                href="https://okaykenji.github.io/Line-Sort-Project/Line-Sort-Project%20(Legacy)/">Legacy
-                                Version</a>).
-                        </li>
-                        <li>
-                            Adapting sorting algorithms to JavaScript as needed.
-                        </li>
-                        <li>
-                            Learning to use GitHub Pages to deploy projects.
-                        </li>
-                    </ul>
-                    <div class="buttonContainer">
-                        <button onclick="location.href = 'https://okaykenji.github.io/Line-Sort-Project/'">View the
-                            Project</button>
-                    </div>
-                </div>
-
-            </div>
-            <div id="screenSaver" class="screenSaver">
-                <a href="https://okaykenji.github.io/ScreenSaver/"><img src="images/screensaver.PNG"></a>
-                <div class="upSided">
-                    <hr>
-                    <h3>Screen Saver</h3>
-                    <hr>
-                    <p>An..."art"...project using <a href="https://p5js.org/">p5.js</a>.</p>
-                    <ul>
-                        <li>
-                            Using code libraries, namely <a href="https://p5js.org/">p5.js</a>.
-                        </li>
-                        <li>
-                            No point in the project (just <!--just like my life-->). There's a hidden comment here.
-                        </li>
-                    </ul>
-                    <div class="buttonContainer">
-                        <button onclick="location.href = 'https://okaykenji.github.io/ScreenSaver/'">View the
-                            Project</button>
-                    </div>
-                </div>
-            </div>
-
-            <div id="break" class="break">
-                <h2>Older Projects</h2>
-            </div>
-    
-
-            <div id="rocket" class="rocket">
-                <a href="https://okaykenji.github.io/Data/"><img src="images/rockets.PNG"></a>
-                <div class="upSided">
-                    <hr>
-                    <h3>Next 100 Launches!</h3>
-                    <hr>
-                    <p>An <a href="https://ionicframework.com/">Ionic</a> Project using React.</p>
-                    <ul>
-                        <li>
-                            Using frameworks like Ionic and React.
-                        </li>
-                        <li>
-                            Making use of APIs using <a href="https://www.npmjs.com/package/axios">Axios</a>.
-                        </li>
-                        <li>
-                            Practicing mobile web app design.
-                        </li>
-                    </ul>
-                    <div class="buttonContainer">
-                        <button onclick="location.href = 'https://okaykenji.github.io/Data/'">View the
-                            Project</button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="bluejelly" class="bluejelly">
-                <div class="sub">  <a   href=""><img  style="max-width: 200px; height: fit-content; "  src="images/phone-prev.PNG"></a>
-                    <p >Preview</p>
-                </div>
-                <a class="pic" href=""><img src="images/choate.PNG"></a>
-                <div class="desc">
-                    <hr>
-                    <h3>AquaWatch Mobile</h3>
-                    <hr>
-                    <p>A team project in development to show monthly reports of water quality.</p>
-                    <ul>
-                        <li>
-                            CS 389 Project worked on with fellow students at Pace University.
-                        </li>
-                    </ul>
-                    <div class="buttonContainer">
-                        <button onclick="location.href = 'https://github.com/esorbella/BlueColab_MobileDataViz'">Github!</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        
-        <footer id="foot">
-            <button id="boom" onclick="boom()">
-                Explode Page
-            </button>
-        </footer>
-    </div>
+    <small>In the meantime, in case you need it:
+      <ul>
+        <li><a href="mailto:okurakeng@gmail.com">Email</a> (📧)</li>
+        <li><a href="https://www.linkedin.com/in/kenji-okura/">Linkedin</a> (👤)</li>
+        <li><a href="https://github.com/OkayKenji/">GitHub Fun</a> (🎉)</li>
+        <li><a href="https://github.com/okurakeng/">GitHub Work</a> (👨‍💻)</li>
+      </ul> 
+    </small>
+  </div>
 </body>
 
 </html>
