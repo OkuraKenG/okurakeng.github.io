@@ -39,11 +39,8 @@ function draw() {
 const assignSolarSysCords = () => {
   sunDiameter = random(25, 50);
 
-  solarSystemCenterX = random(sunDiameter, windowWidth - sunDiameter * 2);
+  solarSystemCenterX = random(windowWidth/2, windowWidth - sunDiameter * 2);
   solarSystemCenterY = random(windowHeight/2, windowHeight - sunDiameter * 2);
-
-  // solarSystemCenterX = windowWidth/2;
-  // solarSystemCenterY = windowHeight/2;
 
   mercury = new Planet(sunDiameter * random(2, 3));
   venus = new Planet(sunDiameter * random(4, 5));
@@ -70,6 +67,7 @@ const assignSolarSysCords = () => {
 function drawBaseSolarSys() {
   background(25);
 
+  strokeWeight(2);
   drawStars();
   drawSun();
 
