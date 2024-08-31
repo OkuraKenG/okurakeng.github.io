@@ -9,21 +9,22 @@ class System {
         this.comets = [];
         this.linkedBody = linkedBody ?? undefined;
 
-        for (let i = 0; i < 200; i++) {
-            this.stars.push(new Star((Math.random() - 0.5) / 40));
-        }
+        if (!linkedBody) {
+            for (let i = 0; i < 200; i++) {
+                this.stars.push(new Star((Math.random() - 0.5) / 40));
+            }
 
-        for (let i = 0; i < 2; i++) {
-            this.comets.push(new Comet(this.x, this.y));
+            for (let i = 0; i < 2; i++) {
+                this.comets.push(new Comet(this.x, this.y));
+            }
         }
     }
 
     drawBase() {
-        background(25);
-
         this.#drawStars();
         this.#drawSun();
-        this.drawOrbits();
+        if (!this.linkedBody) 
+            this.drawOrbits();
     }
 
     #drawSun() {
@@ -42,11 +43,11 @@ class System {
 
     drawOrbits() {
         stroke(75)
-        strokeWeight(2);
+        strokeWeight(1.5);
         noFill();
 
-        for (const body of this.bodies) { 
-            body.semiMajorAxis ? circle(this.x, this.y, body.semiMajorAxis) : body.drawOrbits();
+        for (const body of this.bodies) {
+            body.semiMajorAxis ? circle(this.x, this.y, body.semiMajorAxis) : '';
         }
     }
 
@@ -118,7 +119,7 @@ class Comet {
     constructor(solarSystemCenterX, solarSystemCenterY) {
         this.swingyness = random(150, 250);
         this.offset = random(32, 100);
-        this.h = random(-75, -25);
+        this.h = random(-1250, -25);
         this.k = ((solarSystemCenterX - this.h) * (solarSystemCenterX - this.h)) / (4 * this.swingyness) + solarSystemCenterY - this.offset;
     }
 
