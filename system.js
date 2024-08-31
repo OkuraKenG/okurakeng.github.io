@@ -102,12 +102,13 @@ class Star {
     constructor(bias) {
         this.x = random(0, windowWidth);
         this.y = random(0, windowHeight);
-        this.bright = random(50, 150);
+        this.bright = random(20, 150);
         this.bias = bias;
+        this.random = Math.random();
     }
 
     draw() {
-        stroke(this.bright)
+        stroke(this.random < 0.1 ? this.bright + Math.random()*75 : this.bright);
         point(this.x, this.y);
         this.x += this.bias;
         this.y += this.bias;
