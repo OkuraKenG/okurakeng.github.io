@@ -5,3 +5,56 @@ html, body {
 canvas {
   display: block;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.firstLine {
+  font-size: large;
+}
+
+p {
+  font-size: medium;
+}
+
+.titleCard {
+  background-color: rgba(55, 182, 255, 0.316);
+  width: fit-content;
+  padding: 15px;
+  margin: 10px;
+}
+
+.subtitle {
+  background-color: rgba(55, 182, 255, 0.316);
+  width: fit-content;
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+ul {
+  margin: 0px;
+}
+
+
+@media (min-width: 767px) {
+  
+
+  .titleCard {
+    width: 40%;
+ }
+
+
+}
+
+@media (min-width: 1024px) {
+  .titleCard {
+    width: 40%;
+ }
+
+}
+
