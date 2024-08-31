@@ -58,3 +58,18 @@ ul {
 
 }
 
+.blowUp {
+  animation-duration: 6s;
+  animation-name: boom;
+}
+
+@keyframes boom {
+  from {
+    transform: scale(1) rotateX(0deg) rotateY(0deg)  translateY(0) translateX(-5px); 
+  }
+
+  to {
+      transform: scale(1.05) rotateX(180deg) rotateY(45deg) translateY(-4000px) translateX(5px);
+  }
+
+}

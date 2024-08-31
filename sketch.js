@@ -26,6 +26,12 @@ function windowResized() {
 
 }
 
+function mouseClicked(event) {
+  // Code to run that uses the event.
+  if (dist(event.x, event.y, solarSystem.x, solarSystem.y) < (solarSystem.mainBodyDiameter / 2))
+    boom();
+}
+
 function draw() {
   switch(type) {
     case 'solar':
@@ -69,3 +75,10 @@ const initiateSolarSystem = () => {
   return new System(sunDiameter,solarSystemCenterX, solarSystemCenterY, rate, bodies);
 };
 
+
+function boom() {
+  let list = ["titleCard"];
+  for (let ele of list)
+      document.getElementById(ele).classList.add("blowUp");
+  console.log('BOOM!')
+}

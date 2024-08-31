@@ -108,7 +108,7 @@ class Star {
     }
 
     draw() {
-        stroke(this.random < 0.1 ? this.bright + Math.random()*75 : this.bright);
+        stroke(this.random < 0.1 ? this.bright + Math.random()*50 : this.bright);
         point(this.x, this.y);
         this.x += this.bias;
         this.y += this.bias;
