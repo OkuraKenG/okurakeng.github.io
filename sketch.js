@@ -3,7 +3,7 @@ let nightSky;
 let nightSkyRT;
 let myData;
 let type = 'solar';
-let options = ['weather', 'solar', 'streak', 'rt'];
+let options = ['solar', 'streak', 'rt'];
 
 const links = [
   "https://api.weather.gov/gridpoints/AER/75,95/forecast/hourly", //pacfic 
@@ -17,37 +17,37 @@ const links = [
 
 
 function preload() {
-  loadJSON(random(links), handleSuccess, handleError);
+ // loadJSON(random(links), handleSuccess, handleError);
 }
 
-function handleSuccess(data) {
-  myData = data;
-  myData = myData.properties.periods.map(
-    (forecast) => {
-      return {
-        temperature: forecast.temperature,
-        dewpoint: forecast.dewpoint.value * (9 / 5) + 32,
-        relativeHumidity: forecast.relativeHumidity.value,
-        probabilityOfPrecipitation: forecast.probabilityOfPrecipitation.value,
-        windSpeed: forecast.windSpeed,
-        windDirection: forecast.windDirection
-      }
+// function handleSuccess(data) {
+//   myData = data;
+//   myData = myData.properties.periods.map(
+//     (forecast) => {
+//       return {
+//         temperature: forecast.temperature,
+//         dewpoint: forecast.dewpoint.value * (9 / 5) + 32,
+//         relativeHumidity: forecast.relativeHumidity.value,
+//         probabilityOfPrecipitation: forecast.probabilityOfPrecipitation.value,
+//         windSpeed: forecast.windSpeed,
+//         windDirection: forecast.windDirection
+//       }
 
-    }
-  )
-}
+//     }
+//   )
+// }
 
-// Log any errors to the console.
-function handleError(error) {
-  options.pop();
-}
+// // Log any errors to the console.
+// function handleError(error) {
+//   options.pop();
+// }
 
 function setup() {
-  for (let i = 0; i < 100; i++) {
-    options.push('solar')
-    options.push('streak')
-    options.push('rt')
-  }
+  // for (let i = 0; i < 100; i++) {
+  //   options.push('solar')
+  //   options.push('streak')
+  //   options.push('rt')
+  // }
   type = random(options);
   let canvas = createCanvas(windowWidth, document.documentElement.scrollHeight);
   canvas.position(0, 0);
@@ -67,9 +67,9 @@ function setup() {
       angleMode(DEGREES);
       nightSkyRT = new NightSkyRT(random(windowWidth / 2, windowWidth), random(windowHeight / 2, windowHeight - 80));
       break;
-    case 'weather':
-      drawWeather();
-      break;
+    // case 'weather':
+    //   drawWeather();
+    //   break;
   }
 }
 
@@ -85,12 +85,12 @@ function windowResized() {
       angleMode(DEGREES)
       nightSky = new NightSky(random(0, windowWidth), random(50, windowHeight - 50));
       break;
-      case 'rt':
+    case 'rt':
         nightSkyRT = new NightSkyRT(random(windowWidth / 2, windowWidth), random(windowHeight / 2, windowHeight - 80));
         break;
-    case 'weather':
-      drawWeather();
-      break;
+    // case 'weather':
+    //   drawWeather();
+    //   break;
   }
 
 }
@@ -105,8 +105,8 @@ function mouseClicked(event) {
       if (dist(event.x, event.y, nightSky.x, nightSky.y) < 2.5)
         boom();
       break;
-    case 'weather':
-      break;
+    // case 'weather':
+    //   break;
   }
 
 }
@@ -124,8 +124,8 @@ function draw() {
     case 'rt':
       nightSkyRT.draw();
     break;
-    case 'weather':
-      break;
+    // case 'weather':
+    //   break;
   }
 
 }
