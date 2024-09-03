@@ -7,8 +7,12 @@ class NightSkyRT {
         this.terrains = [new Terrain(
             this.noiseLevel = random(65, 125),
             random(0.001, 0.02),
-            50,
+            25,
             color(1))];
+        this.iss = new ISS(windowWidth/2,windowHeight);
+
+        this.moon = new Moon(windowWidth/4,windowHeight);
+
 
         for (let i = 0; i < 750; i++) {
             this.stars.push(
@@ -34,15 +38,19 @@ class NightSkyRT {
             star.draw(this.x, this.y);
         }
 
-        
         for (const satellite of this.satellites) {
             satellite.draw();
         }
+
+        this.iss.draw();
+        this.moon.draw();
+
 
         for (const terrain of this.terrains) {
             terrain.draw();
         }
 
+        
 
 
 
@@ -91,4 +99,54 @@ class SatelliteRT {
 
     }
 
+}
+
+class ISS {
+    constructor(x, y) {
+        this.startX = x;
+        this.startY = y;
+        this.x = x;
+        this.y = y;
+        this.v_x = random([-0.25, 0.25]);
+        this.v_y = -0.25;
+        this.distance = random(windowHeight * 0.25, windowHeight * 0.35)
+    }
+    draw() {
+        strokeWeight(0.6);
+
+        this.x = this.x + this.v_x;
+        this.y = this.y + this.v_y;
+        fill(255)
+        textSize(5);
+        text('🛰️',this.x, this.y)
+        // circle(this.x, this.y, 20);
+
+
+
+    }
+}
+
+class Moon {
+    constructor(x, y) {
+        this.startX = x;
+        this.startY = y;
+        this.x = x;
+        this.y = y;
+        this.v_x = random([-0.05, 0.05]);
+        this.v_y = -0.05;
+        this.distance = random(windowHeight * 0.25, windowHeight * 0.35)
+    }
+    draw() {
+        strokeWeight(0.6);
+
+        this.x = this.x + this.v_x;
+        this.y = this.y + this.v_y;
+        fill(255)
+        textSize(12);
+        text('🌕',this.x, this.y)
+        // circle(this.x, this.y, 20);
+
+
+
+    }
 }
