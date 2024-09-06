@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import P5Background from './Sketch';
+import P5Background from './components/Sketch';
+import Header from './components/Header';
+import Body from './components/Body';
 
 export default function App() {
-  return (
-    <div className='m-4'>
-        <Typography variant="h4" component="h1" className='text-red-100'>
-          Material UI Create React App example with Tailwind CSS in TypeScript
-        </Typography>
-        <P5Background/>
-    </div>
-  );
+	return (
+		<div className='m-4 mt-8 ml-8'>
+			<Header />
+			<Body />
+			<P5Background />
+		</div>
+	);
 }
