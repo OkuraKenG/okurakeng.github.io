@@ -7,6 +7,12 @@ module.exports = {
 				'custom': '0px 0px 25px 10px rgba(55, 182, 255, 0.56)',
 				'custom-yellow': '0px 0px 25px 10px rgba(255, 205, 85, 0.56)'
 			},
+			screens: {
+				sm: '600px',
+				md: '900px',
+				lg: '1200px',
+				xl: '1536px',
+			},
 		},
 	},
 	corePlugins: {

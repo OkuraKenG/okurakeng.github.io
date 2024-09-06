@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export default function Header() {
-	return <div className='backdrop-blur p-4 w-1/2 bg-[#37b6ff] bg-opacity-20 rounded-2xl shadow-custom'>
+	return <div className='backdrop-blur p-4 w-full md:w-1/2 bg-[#37b6ff] bg-opacity-20 rounded-2xl shadow-custom'>
 		<h1 className='text-white'>
 			Welcome! 👋
 		</h1>

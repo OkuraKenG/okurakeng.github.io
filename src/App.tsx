@@ -5,7 +5,7 @@ import Body from './components/Body';
 
 export default function App() {
 	return (
-		<div className='m-4 mt-8 ml-8'>
+		<div className='m-4 md:mt-8 md:ml-8'>
 			<Header />
 			<Body />
 			<P5Background />

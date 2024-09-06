@@ -3,6 +3,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 interface TabPanelProps {
 	children?: React.ReactNode;
@@ -12,6 +14,8 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
 	const { children, value, index, ...other } = props;
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Check if screen size is mobile
 
 	return (
 		<div
@@ -22,7 +26,10 @@ function TabPanel(props: TabPanelProps) {
 			{...other}
 		>
 			{value === index && (
-				<Box sx={{ pl: 3 }}>
+				<Box sx={{
+					pl: isMobile ? 0 : 3,
+					pt: isMobile ? 3 : 0
+				}}>
 					{children}
 				</Box>
 			)}
@@ -39,27 +46,36 @@ function a11yProps(index: number) {
 
 export default function VerticalTabs() {
 	const [value, setValue] = React.useState(0);
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Check if screen size is mobile
 
 	const handleChange = (event: React.SyntheticEvent, newValue: number) => {
 		setValue(newValue);
 	};
 
 	return (
-		<Box sx={{ flexGrow: 1, display: 'flex' }}>
+		<Box sx={{ flexGrow: 1, display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
 			<Tabs
-				orientation="vertical"
+				orientation={isMobile ? 'horizontal' : 'vertical'} // Switch orientation based on screen size
 				value={value}
 				onChange={handleChange}
-				aria-label="Vertical tabs example"
-				sx={{ borderRight: 1, borderColor: 'divider', minWidth: '125px' }}
+				aria-label="Tabs example"
+				sx={{
+					borderBottom: isMobile ? 1 : 0,
+					borderRight: isMobile ? 0 : 1,
+					borderColor: 'divider',
+					minWidth: isMobile ? 'auto' : '125px',
+					display: 'flex',
+					flexDirection: isMobile ? 'row' : 'column', // Adjust direction for mobile
+				}}
 			>
 				<Tab
 					label="About Me"
 					sx={{
 						color: 'white',
 						textAlign: 'left',
-						justifyContent: 'flex-start', // Align text to the left
-						flexDirection: 'row', // Ensure label is in row direction
+						justifyContent: 'flex-start',
+						flexDirection: 'row',
 						'& .MuiTab-wrapper': {
 							textAlign: 'left',
 						},
@@ -106,39 +122,42 @@ export default function VerticalTabs() {
 					{...a11yProps(3)}
 				/>
 			</Tabs>
-			<TabPanel value={value} index={0}>
-				<h2 className="text-white m-0">About Me</h2>
-				<Divider sx={{ bgcolor: 'white' }} className='my-2' />
-				<div className='text-white'>
-					Hello! I&apos;m a recent graduate 🎓 of Pace University with a degree in Computer Science. I currently work as a web-developer for Phormulary and part time as a STEP Instructor at Iona University.
-				</div>
-			</TabPanel>
-			<TabPanel value={value} index={1}>
-				<h2 className="text-white m-0">Projects</h2>
-				<Divider sx={{ bgcolor: 'white' }} className='my-2' />
-				<div className='text-white'>
-					Under Construction. Projects go here.
-				</div>
-			</TabPanel>
-			<TabPanel value={value} index={2}>
-				<h2 className="text-white m-0">Experience</h2>
-				<Divider sx={{ bgcolor: 'white' }} className='my-2' />
-				<div className='text-white'>
-					Under Construction. Experiences go here.
-				</div>
-			</TabPanel>
-			<TabPanel value={value} index={3}>
-				<h2 className="text-white m-0">Contact</h2>
-				<Divider sx={{ bgcolor: 'white' }} className='my-2' />
-				<div className='text-white'>In the meantime, in case you need it:
-					<ul>
-						<li><a href="mailto:okurakeng@gmail.com">Email</a> (📧)</li>
-						<li><a href="https://www.linkedin.com/in/kenji-okura/">Linkedin</a> (👤)</li>
-						<li><a href="https://github.com/OkayKenji/">GitHub Fun</a> (🎉)</li>
-						<li><a href="https://github.com/okurakeng/">GitHub Work</a> (👨‍💻)</li>
-					</ul>
-				</div>
-			</TabPanel>
+			<Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+				<TabPanel value={value} index={0}>
+					<h2 className="text-white m-0">About Me</h2>
+					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
+					<div className='text-white'>
+						Hello! I&apos;m a recent graduate 🎓 of Pace University with a degree in Computer Science. I currently work as a web-developer for Phormulary and part time as a STEP Instructor at Iona University.
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={1}>
+					<h2 className="text-white m-0">Projects</h2>
+					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
+					<div className='text-white'>
+						Under Construction. Projects go here.
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={2}>
+					<h2 className="text-white m-0">Experience</h2>
+					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
+					<div className='text-white'>
+						Under Construction. Experiences go here.
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={3}>
+					<h2 className="text-white m-0">Contact</h2>
+					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
+					<div className='text-white'>In the meantime, in case you need it:
+						<ul>
+							<li><a href="mailto:okurakeng@gmail.com">Email</a> (📧)</li>
+							<li><a href="https://www.linkedin.com/in/kenji-okura/">Linkedin</a> (👤)</li>
+							<li><a href="https://github.com/OkayKenji/">GitHub Fun</a> (🎉)</li>
+							<li><a href="https://github.com/okurakeng/">GitHub Work</a> (👨‍💻)</li>
+						</ul>
+					</div>
+				</TabPanel>
+			</Box>
 		</Box>
 	);
 }
+
