@@ -6,8 +6,12 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write # Ensure the correct permissions for GitHub Pages
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,7 +29,6 @@ jobs:
 
       - name: Deploy with gh-pages
         run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
