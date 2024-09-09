@@ -12,3 +12,11 @@ canvas {
 #webpack-dev-server-client-overlay {
 	visibility: hidden;
 }
+
+a:visited {
+	color: rgb(195, 195, 195);
+}
+
+a {
+	color: white;
+}
