@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write # Ensure the correct permissions for GitHub Pages
+      pages: write
 
     steps:
       - name: Checkout repository
