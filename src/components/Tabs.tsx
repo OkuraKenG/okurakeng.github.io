@@ -6,6 +6,7 @@ import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import AboutMe from './tabs/AboutMe';
+// import LeftAlignedTimeline from './tabs/Projects';
 
 interface TabPanelProps {
 	children?: React.ReactNode;
@@ -25,12 +26,18 @@ function TabPanel(props: TabPanelProps) {
 			id={`vertical-tabpanel-${index}`}
 			aria-labelledby={`vertical-tab-${index}`}
 			{...other}
+			style={{
+				maxHeight: isMobile ? '310px' : '370px', // Set a max height for the tab panel
+				overflowY: 'auto', // Enable scrolling for overflow
+			}}
 		>
 			{value === index && (
-				<Box sx={{
-					pl: isMobile ? 0 : 3,
-					pt: isMobile ? 3 : 0
-				}}>
+				<Box
+					sx={{
+						pl: isMobile ? 0 : 3,
+						pt: isMobile ? 3 : 0,
+					}}
+				>
 					{children}
 				</Box>
 			)}
@@ -69,6 +76,9 @@ export default function BasicTabs() {
 					display: 'flex',
 					flexDirection: isMobile ? 'row' : 'column', // Adjust direction for mobile
 				}}
+				variant="scrollable"
+				scrollButtons={isMobile}
+				allowScrollButtonsMobile
 			>
 				<Tab
 					label="About Me"
@@ -131,8 +141,9 @@ export default function BasicTabs() {
 					<h2 className="text-white m-0">Projects</h2>
 					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
 					<div className='text-white'>
-						Under Construction. Projects go here.
+						Under Construction. Experiences go here.
 					</div>
+					{/* <LeftAlignedTimeline /> */}
 				</TabPanel>
 				<TabPanel value={value} index={2}>
 					<h2 className="text-white m-0">Experience</h2>
