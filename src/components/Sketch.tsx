@@ -1,15 +1,16 @@
 import * as React from "react";
 import { P5CanvasInstance, ReactP5Wrapper, Sketch, SketchProps } from "@p5-wrapper/react";
 import { Planet, System } from "../helpers/System";
-// import { NightSky } from "../helpers/nightsky";
+import { NightSkyStreak } from "../helpers/NightSkyStreak";
+import { NightSky } from "../helpers/NightSky";
 // import { NightSkyRT } from "../helpers/nightskyrt";
 
 const sketch: Sketch = p5 => {
 	let solarSystem: System;
-	// let nightSky: NightSky;
-	// let nightSkyRT: NightSkyRT;
+	let nightSky: NightSkyStreak;
+	let nightSkyRT: NightSky;
 	let type = 'solar';
-	const options = ['solar'];
+	const options = ['solar', 'streak', 'nightsky'];
 	p5.setup = () => {
 		p5.createCanvas(p5.windowWidth, document.documentElement.scrollHeight)
 		p5.pixelDensity(2);
@@ -21,14 +22,14 @@ const sketch: Sketch = p5 => {
 				console.log(solarSystem)
 				solarSystem.drawBase();
 				break;
-			// case 'streak':
-			// 	p5.angleMode(p5.DEGREES);
-			// 	nightSky = new NightSky(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80));
-			// 	break;
-			// case 'rt':
-			// 	p5.angleMode(p5.DEGREES);
-			// 	nightSkyRT = new NightSkyRT(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80));
-			// 	break;
+			case 'streak':
+				p5.angleMode(p5.DEGREES);
+				nightSky = new NightSkyStreak(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				break;
+			case 'nightsky':
+				p5.angleMode(p5.DEGREES);
+				nightSkyRT = new NightSky(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				break;
 		}
 	};
 
@@ -44,12 +45,12 @@ const sketch: Sketch = p5 => {
 				solarSystem.drawBase();
 				solarSystem.draw();
 				break;
-			// case 'streak':
-			// 	nightSky.draw();
-			// 	break;
-			// case 'rt':
-			// 	nightSkyRT.draw();
-			// 	break;
+			case 'streak':
+				nightSky.draw();
+				break;
+			case 'nightsky':
+				nightSkyRT.draw();
+				break;
 
 		}
 	};
@@ -62,14 +63,14 @@ const sketch: Sketch = p5 => {
 				solarSystem = initiateSolarSystem(p5);
 				solarSystem.drawBase();
 				break;
-			// case 'streak':
-			// 	p5.angleMode(p5.DEGREES);
-			// 	nightSky = new NightSky(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80));
-			// 	break;
-			// case 'rt':
-			// 	p5.angleMode(p5.DEGREES);
-			// 	nightSkyRT = new NightSkyRT(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80));
-			// 	break;
+			case 'streak':
+				p5.angleMode(p5.DEGREES);
+				nightSky = new NightSkyStreak(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				break;
+			case 'nightsky':
+				p5.angleMode(p5.DEGREES);
+				nightSkyRT = new NightSky(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				break;
 		}
 	}
 };
@@ -104,8 +105,6 @@ const initiateSolarSystem = (p5: P5CanvasInstance<SketchProps>) => {
 	];
 
 	const temp = new System(sunDiameter, solarSystemCenterX, solarSystemCenterY, rate, bodies, undefined, p5);
-	console.log(temp.x);
-	console.log(temp.y);
 
 	return temp;
 };
