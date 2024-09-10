@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import AboutMe from './tabs/AboutMe';
-// import LeftAlignedTimeline from './tabs/Projects';
+import LeftAlignedTimeline from './tabs/Projects';
 
 interface TabPanelProps {
 	children?: React.ReactNode;
@@ -27,7 +27,7 @@ function TabPanel(props: TabPanelProps) {
 			aria-labelledby={`vertical-tab-${index}`}
 			{...other}
 			style={{
-				maxHeight: isMobile ? '310px' : '370px', // Set a max height for the tab panel
+				maxHeight: isMobile ? '310px' : '365px', // Set a max height for the tab panel
 				overflowY: 'auto', // Enable scrolling for overflow
 			}}
 		>
@@ -141,9 +141,9 @@ export default function BasicTabs() {
 					<h2 className="text-white m-0">Projects</h2>
 					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
 					<div className='text-white'>
-						Under Construction. Experiences go here.
+						Worked on a bunch of projects with great teams! 🙌🤝
 					</div>
-					{/* <LeftAlignedTimeline /> */}
+					<LeftAlignedTimeline />
 				</TabPanel>
 				<TabPanel value={value} index={2}>
 					<h2 className="text-white m-0">Experience</h2>

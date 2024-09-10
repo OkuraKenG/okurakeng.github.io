@@ -4,31 +4,34 @@ import { Planet, System } from "../helpers/System";
 import { NightSkyStreak } from "../helpers/NightSkyStreak";
 import { NightSky } from "../helpers/NightSky";
 // import { NightSkyRT } from "../helpers/nightskyrt";
-
+let globalX: number;
+let globalY: number;
 const sketch: Sketch = p5 => {
 	let solarSystem: System;
 	let nightSky: NightSkyStreak;
 	let nightSkyRT: NightSky;
 	let type = 'solar';
 	const options = ['solar', 'streak', 'nightsky'];
+
 	p5.setup = () => {
 		p5.createCanvas(p5.windowWidth, document.documentElement.scrollHeight)
 		p5.pixelDensity(2);
 		type = p5.random(options);
+		globalX = p5.random(p5.windowWidth / 2, p5.windowWidth);
+		globalY = p5.random(p5.random(p5.windowHeight / 2, p5.windowHeight - 80));
 
 		switch (type) {
 			case 'solar':
 				solarSystem = initiateSolarSystem(p5);
-				console.log(solarSystem)
 				solarSystem.drawBase();
 				break;
 			case 'streak':
 				p5.angleMode(p5.DEGREES);
-				nightSky = new NightSkyStreak(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				nightSky = new NightSkyStreak(globalX, globalY, p5);
 				break;
 			case 'nightsky':
 				p5.angleMode(p5.DEGREES);
-				nightSkyRT = new NightSky(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				nightSkyRT = new NightSky(globalX, globalY, p5);
 				break;
 		}
 	};
@@ -65,11 +68,11 @@ const sketch: Sketch = p5 => {
 				break;
 			case 'streak':
 				p5.angleMode(p5.DEGREES);
-				nightSky = new NightSkyStreak(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				nightSky = new NightSkyStreak(globalX, globalY, p5);
 				break;
 			case 'nightsky':
 				p5.angleMode(p5.DEGREES);
-				nightSkyRT = new NightSky(p5.random(p5.windowWidth / 2, p5.windowWidth), p5.random(p5.windowHeight / 2, p5.windowHeight - 80), p5);
+				nightSkyRT = new NightSky(globalX, globalY, p5);
 				break;
 		}
 	}
@@ -79,8 +82,8 @@ const initiateSolarSystem = (p5: P5CanvasInstance<SketchProps>) => {
 	const sunDiameter = p5.random(40, 50);
 
 
-	const solarSystemCenterX = p5.random(p5.windowWidth / 2, p5.windowWidth - sunDiameter * 2);
-	const solarSystemCenterY = p5.random(p5.windowHeight / 2, p5.windowHeight - sunDiameter * 2);
+	const solarSystemCenterX = globalX;
+	const solarSystemCenterY = globalY;
 
 	const earth = new Planet(sunDiameter * p5.random(7, 8), p5.random(0, 360), p5.random(10, 15), p5);
 	const earth_moon = new System(1, solarSystemCenterX + (earth.semiMajorAxis / 2) * p5.cos(earth.deg), solarSystemCenterY + (earth.semiMajorAxis / 2) * p5.sin(earth.deg), 0.04, [new Planet(30, 0, 7.5, p5)], earth, p5)

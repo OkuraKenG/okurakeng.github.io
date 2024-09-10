@@ -24,9 +24,9 @@ export class NightSky {
 			this.p5.random(0.001, 0.02),
 			25,
 			this.p5.color(1), p5)];
-		this.iss = new ISS(this.p5.windowWidth / 2, this.p5.windowHeight, p5);
+		this.iss = new ISS(this.p5.windowWidth / 2, document.documentElement.scrollHeight, p5);
 
-		this.moon = new Moon(this.p5.windowWidth / 4, this.p5.windowHeight, p5);
+		this.moon = new Moon(this.p5.windowWidth / 4, document.documentElement.scrollHeight, p5);
 
 
 		for (let i = 0; i < 750; i++) {
