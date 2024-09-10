@@ -141,7 +141,7 @@ export class Terrain {
 			const y = this.noiseLevel * this.p5.noise(nx + this.shift * 2);
 
 			// Draw the line.
-			this.p5.line(x, this.p5.windowHeight, x, this.p5.windowHeight - y - this.shift);
+			this.p5.line(x, document.documentElement.scrollHeight, x, document.documentElement.scrollHeight - y - this.shift);
 		}
 	}
 }
