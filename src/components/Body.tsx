@@ -5,19 +5,26 @@ import RightPanel from './right_panel/RightPanel';
 import TitleCard from './TitleCard';
 import { useState } from 'react';
 import { PanelTypes } from './PanelTypes';
-import { useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Fade, Modal, useMediaQuery, useTheme } from '@mui/material';
+import AquaWatchPanel from './right_panel/AquaWatchPanel';
 
 export default function Body() {
+	const [open, setOpen] = React.useState(false);
+	const handleClose = () => {
+		setHidePanel(false);
+		setOpen(false);
+	}
 	const [hidePanel, setHidePanel] = useState<boolean>(true);
 	const [panelType, setPanelType] = useState<PanelTypes>(PanelTypes.AQUAWATCH);
 
 	const togglePanelVisibility = (panelType: PanelTypes) => {
 		setPanelType(panelType);
 		setHidePanel(prev => !prev);
+		setOpen(prev => !prev);
 	};
 
 	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+	const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
 	return <Grid container spacing={4}>
 		<Grid size={isMobile ? 12 : 6}>
@@ -33,5 +40,45 @@ export default function Body() {
 				<RightPanel panelType={panelType} />
 			</div>
 		</Grid>}
+		{isMobile && <Modal
+			aria-labelledby="transition-modal-title"
+			aria-describedby="transition-modal-description"
+			open={open}
+			onClose={handleClose}
+			closeAfterTransition
+			slotProps={{
+				backdrop: {
+					timeout: 500,
+				},
+			}}
+			hideBackdrop
+			disablePortal
+		>
+			<Fade in={open}>
+				<Box sx={{
+					position: 'absolute' as const,
+					top: '50%',
+					left: '50%',
+					transform: 'translate(-50%, -50%)',
+					width: document.documentElement.scrollWidth - 50,
+					height: '95%',
+					maxHeight: '95%',
+					color: 'white',
+					boxShadow: 24,
+					background: '#333333',
+					p: 4,
+					overflowY: 'auto', // Enable scrolling for overflow
+					borderRadius: '25px'
+				}}>
+
+
+					<AquaWatchPanel />
+					<Button onClick={
+						handleClose
+					} variant="outlined">Close</Button>
+
+				</Box>
+			</Fade>
+		</Modal>}
 	</Grid>
 }
