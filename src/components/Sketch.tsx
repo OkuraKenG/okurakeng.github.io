@@ -14,7 +14,6 @@ const sketch: Sketch = p5 => {
 	const options = ['solar', 'streak', 'nightsky'];
 
 	p5.setup = () => {
-		console.log(document.documentElement.scrollWidth)
 		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollHeight);
 		p5.pixelDensity(2);
 		type = p5.random(options);
