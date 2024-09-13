@@ -14,7 +14,7 @@ const sketch: Sketch = p5 => {
 	const options = ['solar', 'streak', 'nightsky'];
 
 	p5.setup = () => {
-		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollWidth);
+		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollHeight);
 		p5.pixelDensity(2);
 		type = p5.random(options);
 		globalX = p5.random(p5.windowWidth / 2, p5.windowWidth);
@@ -58,7 +58,7 @@ const sketch: Sketch = p5 => {
 	};
 
 	p5.windowResized = () => {
-		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollWidth);
+		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollHeight);
 	}
 };
 
