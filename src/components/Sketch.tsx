@@ -44,7 +44,6 @@ const sketch: Sketch = p5 => {
 		switch (type) {
 			case 'solar':
 				p5.background(25);
-				console.log(solarSystem.x)
 				solarSystem.drawBase();
 				solarSystem.draw();
 				break;
