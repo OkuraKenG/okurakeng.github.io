@@ -14,7 +14,7 @@ const sketch: Sketch = p5 => {
 	const options = ['solar', 'streak', 'nightsky'];
 
 	p5.setup = () => {
-		p5.createCanvas(p5.windowWidth, document.documentElement.scrollHeight)
+		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollWidth);
 		p5.pixelDensity(2);
 		type = p5.random(options);
 		globalX = p5.random(p5.windowWidth / 2, p5.windowWidth);
@@ -36,9 +36,9 @@ const sketch: Sketch = p5 => {
 		}
 	};
 
-	p5.mouseClicked = (event) => {
-		console.log(event)
-	}
+	// p5.mouseClicked = (event) => {
+	// 	console.log(event)
+	// }
 
 	p5.draw = () => {
 		switch (type) {
@@ -58,22 +58,7 @@ const sketch: Sketch = p5 => {
 	};
 
 	p5.windowResized = () => {
-		p5.resizeCanvas(p5.windowWidth, document.documentElement.scrollHeight);
-
-		switch (type) {
-			case 'solar':
-				solarSystem = initiateSolarSystem(p5);
-				solarSystem.drawBase();
-				break;
-			case 'streak':
-				p5.angleMode(p5.DEGREES);
-				nightSky = new NightSkyStreak(globalX, globalY, p5);
-				break;
-			case 'nightsky':
-				p5.angleMode(p5.DEGREES);
-				nightSkyRT = new NightSky(globalX, globalY, p5);
-				break;
-		}
+		p5.resizeCanvas(p5.windowWidth, p5.windowHeight > document.documentElement.scrollWidth ? p5.windowHeight : document.documentElement.scrollWidth);
 	}
 };
 
