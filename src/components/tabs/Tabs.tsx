@@ -5,8 +5,9 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import AboutMe from './tabs/AboutMe';
-import LeftAlignedTimeline from './tabs/Projects';
+import AboutMe from './AboutMe';
+import LeftAlignedTimeline from './Projects';
+import { PanelTypes } from '../PanelTypes';
 
 interface TabPanelProps {
 	children?: React.ReactNode;
@@ -52,7 +53,11 @@ function a11yProps(index: number) {
 	};
 }
 
-export default function BasicTabs() {
+interface BasicTabsProps {
+	togglePanelVisibility: (panelType: PanelTypes) => void;
+}
+
+export default function BasicTabs({ togglePanelVisibility }: BasicTabsProps) {
 	const [value, setValue] = React.useState(0);
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Check if screen size is mobile
@@ -143,7 +148,7 @@ export default function BasicTabs() {
 					<div className='text-white'>
 						Worked on a bunch of projects with great teams! 🙌🤝
 					</div>
-					<LeftAlignedTimeline />
+					<LeftAlignedTimeline togglePanelVisibility={togglePanelVisibility} />
 				</TabPanel>
 				<TabPanel value={value} index={2}>
 					<h2 className="text-white m-0">Experience</h2>
@@ -159,8 +164,7 @@ export default function BasicTabs() {
 						<ul>
 							<li><a href="mailto:okurakeng@gmail.com">Email</a> (📧)</li>
 							<li><a href="https://www.linkedin.com/in/kenji-okura/">Linkedin</a> (👤)</li>
-							<li><a href="https://github.com/OkayKenji/">GitHub Fun</a> (🎉)</li>
-							<li><a href="https://github.com/okurakeng/">GitHub Work</a> (👨‍💻)</li>
+							<li><a href="https://github.com/OkayKenji/">GitHub</a> (🎉)</li>
 						</ul>
 					</div>
 				</TabPanel>

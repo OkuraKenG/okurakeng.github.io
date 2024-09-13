@@ -23,6 +23,7 @@ a {
 
 div {
 	scrollbar-width: thin;
+	scrollbar-color: #9f9f9f rgba(48, 48, 48, 0.9) ;
 }
 
 ul {
