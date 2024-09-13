@@ -5,8 +5,13 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import AquaWatchMobile from './projects/AquaWatchMobile';
+import { PanelTypes } from '../PanelTypes';
 
-export default function LeftAlignedTimeline() {
+interface LeftAlignedTimelineProps {
+	togglePanelVisibility: (panelType: PanelTypes) => void;
+}
+
+export default function LeftAlignedTimeline({ togglePanelVisibility }: LeftAlignedTimelineProps) {
 	return (
 		<Timeline
 			sx={{
@@ -18,7 +23,7 @@ export default function LeftAlignedTimeline() {
 			}}
 		>
 
-			<AquaWatchMobile />
+			<AquaWatchMobile togglePanelVisibility={togglePanelVisibility} />
 
 			<TimelineItem>
 				<TimelineSeparator>
