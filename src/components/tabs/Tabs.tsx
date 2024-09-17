@@ -8,6 +8,7 @@ import { useTheme } from '@mui/material/styles';
 import AboutMe from './AboutMe';
 import LeftAlignedTimeline from './Projects';
 import { PanelTypes } from '../PanelTypes';
+import ExperiencesTimeline from './Experiences';
 
 interface TabPanelProps {
 	children?: React.ReactNode;
@@ -153,9 +154,7 @@ export default function BasicTabs({ togglePanelVisibility }: BasicTabsProps) {
 				<TabPanel value={value} index={2}>
 					<h2 className="text-white m-0">Experience</h2>
 					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
-					<div className='text-white'>
-						Under Construction. Experiences go here.
-					</div>
+					<ExperiencesTimeline />
 				</TabPanel>
 				<TabPanel value={value} index={3}>
 					<h2 className="text-white m-0">Contact</h2>
