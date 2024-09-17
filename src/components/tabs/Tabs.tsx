@@ -146,7 +146,7 @@ export default function BasicTabs({ togglePanelVisibility }: BasicTabsProps) {
 					<h2 className="text-white m-0">Projects</h2>
 					<Divider sx={{ bgcolor: 'white' }} className='my-2' />
 					<div className='text-white'>
-						Worked on a bunch of projects with great teams! 🙌🤝
+						Some projects I worked on
 					</div>
 					<LeftAlignedTimeline togglePanelVisibility={togglePanelVisibility} />
 				</TabPanel>

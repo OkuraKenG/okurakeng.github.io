@@ -5,3 +5,5 @@ export { default as Python } from './python.png';
 export { default as R } from './r.png';
 export { default as ReactLogo } from './react.png';
 export { default as Shiny } from './shiny.png';
+export { default as Ionic } from './ionic.png';
+export { default as TS } from './ts.png';

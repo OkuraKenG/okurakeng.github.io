@@ -6,7 +6,6 @@ import TitleCard from './TitleCard';
 import { useState } from 'react';
 import { PanelTypes } from './PanelTypes';
 import { Box, Fade, Modal, useMediaQuery, useTheme } from '@mui/material';
-import AquaWatchPanel from './right_panel/AquaWatchPanel';
 
 export default function Body() {
 	const [open, setOpen] = React.useState(false);
@@ -79,8 +78,7 @@ export default function Body() {
 							Close
 						</button>
 
-
-						<AquaWatchPanel />
+						<RightPanel panelType={panelType} />
 					</Box>
 				</div>
 			</Fade>
