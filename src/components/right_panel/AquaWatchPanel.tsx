@@ -3,20 +3,22 @@ import datascreen from '../../assets/datascreen.png';
 import titleScreen from '../../assets/titleScreen.png';
 import build from '../../assets/build.png';
 import Grid from '@mui/material/Grid2';
-import { Avatar, Chip } from '@mui/material';
+import { Avatar, Chip, useMediaQuery, useTheme } from '@mui/material';
 import { Expo, ReactLogo, JS, Plotly, Python, R, Shiny } from '../../assets/icons';
 
 export default function AquaWatchPanel() {
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-	return <div className='h-w-full h-full overflow-y-auto text-white text-sm'>
+	return <div className='h-w-full h-full overflow-y-auto overflow-x-hidden text-white text-sm'>
 		<h2>AquaWatch Mobile</h2>
 		<div className='float-right'>
 			<Grid container>
-				<Grid>
+				<Grid size={6}>
 					<img src={titleScreen} width={150} className='ml-1' /> <br />
 					Home Screen
 				</Grid>
-				<Grid>
+				<Grid size={6}>
 					<img src={datascreen} width={150} className='ml-2' /> <br />
 					Data Screen
 				</Grid>
@@ -38,7 +40,7 @@ export default function AquaWatchPanel() {
 		<p className='mt-0 mt-0'>With this project we hope to be an example of what can be possible in terms of water data right at your finger tips. Knowing what&apos;s in your water is a <a href='https://bluecolab.pace.edu/rtkh2o/'>right</a> - this is the start of it. The app shows monthly summaries of what is in Pace&apos;s Choate Pond, with a monthly graph of water metrics as well as a monthly <a href='https://www.agry.purdue.edu/hydrology/projects/nexus-swm/en/Tools/WaterQualityCalculator.php'>WQI</a>.</p>
 		<p>We didn&apos;t stop there, we added a bunch of other features just as information on wildlife, Blue CoLab, and a AI Plant Identification feature to detect invasive water plants.</p>
 		<p className='font-bold	m-0 p-0'>Technical Stuff</p>
-		<img src={build} className='float-right mr-1' width={300} />
+		<img src={build} className={` ${isMobile ? 'mx-0' : 'mr-1 float-right'}`} width={300} />
 		<p className='m-0 p-0'>The app relies on a webapp to host the data visualization as seen on the left. The webapp uses <a href='https://shiny.posit.co/'>Shiny</a> initially written in R and later in Python.</p>
 		<p>The webapp then talks to various APIs to gather historic water data. This can later be expanded to gather current water data.</p>
 		<p className='font-bold m-0 p-0'>Tech</p>
