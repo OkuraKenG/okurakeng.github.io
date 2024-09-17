@@ -5,7 +5,7 @@ import RightPanel from './right_panel/RightPanel';
 import TitleCard from './TitleCard';
 import { useState } from 'react';
 import { PanelTypes } from './PanelTypes';
-import { Box, Button, Fade, Modal, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Fade, Modal, useMediaQuery, useTheme } from '@mui/material';
 import AquaWatchPanel from './right_panel/AquaWatchPanel';
 
 export default function Body() {
@@ -54,30 +54,35 @@ export default function Body() {
 			hideBackdrop
 			disablePortal
 		>
+
 			<Fade in={open}>
-				<Box sx={{
-					position: 'absolute' as const,
-					top: '50%',
-					left: '50%',
-					transform: 'translate(-50%, -50%)',
-					width: document.documentElement.scrollWidth - 50,
-					height: '95%',
-					maxHeight: '95%',
-					color: 'white',
-					boxShadow: 24,
-					background: '#333333',
-					p: 4,
-					overflowY: 'auto', // Enable scrolling for overflow
-					borderRadius: '25px'
-				}}>
+				<div>
+
+					<Box sx={{
+						position: 'absolute' as const,
+						top: '10%',
+						left: '0%',
+						width: '100%',
+						height: '90%',
+						maxHeight: '90%',
+						overflow: 'visible', // Ensure overflow doesn't clip elements
+						// color: 'white',
+						boxShadow: 24,
+						background: '#333333',
+						p: 4,
+						borderRadius: '25px 25px 0px 0px',
+					}}>
+						<button
+							className="w-full bg-transparent text-white"
+							onClick={handleClose}
+						>
+							Close
+						</button>
 
 
-					<AquaWatchPanel />
-					<Button onClick={
-						handleClose
-					} variant="outlined">Close</Button>
-
-				</Box>
+						<AquaWatchPanel />
+					</Box>
+				</div>
 			</Fade>
 		</Modal>}
 	</Grid>
