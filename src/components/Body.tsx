@@ -27,15 +27,15 @@ export default function Body() {
 
 	return <Grid container spacing={4}>
 		<Grid size={isMobile ? 12 : 6}>
-			<div className='backdrop-blur  p-4 bg-[#37b6ff] bg-opacity-20 rounded-2xl shadow-custom h-40'>
+			<div className='backdrop-blur-lg  p-4 bg-opacity-20 rounded-2xl h-40'>
 				<TitleCard />
 			</div>
-			<div className='backdrop-blur p-4 mt-8 bg-[#ffcd55] bg-opacity-20 rounded-2xl shadow-custom-yellow h-96'>
+			<div className='backdrop-blur-lg p-4 mt-8 bg-opacity-20 rounded-2xl h-96'>
 				<BasicTabs togglePanelVisibility={togglePanelVisibility} />
 			</div>
 		</Grid>
 		{!isMobile && <Grid size={isMobile ? 0 : 6} >
-			<div className={`backdrop-blur p-4 bg-[#96beff] bg-opacity-10 rounded-2xl shadow-custom-blue h-[576px] ${hidePanel ? "opacity-0" : "opacity-100"} transition-opacity ease-in duration-150`}			>
+			<div className={`backdrop-blur-lg p-4 bg-opacity-20 rounded-2xl h-[576px] ${hidePanel ? "opacity-0" : "opacity-100"} transition-opacity ease-in duration-150`}			>
 				<RightPanel panelType={panelType} />
 			</div>
 		</Grid>}
