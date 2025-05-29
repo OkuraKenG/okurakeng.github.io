@@ -17,10 +17,10 @@ export default function Next100Panel() {
 			</Grid>
 		</div>
 		<hr />
-		<div>September 2023 - May 2024</div>
+		<div>September 2023 - May 2024 (active development)</div>
 		<hr />
 		<p className='font-bold	m-0 p-0'>The Project</p>
-		<p className='mt-0 mt-0'>Interactive webapp designed to show readers the next 100 rocket launches. All data curtesy of <a href='https://thespacedevs.com/'>The Space Devs</a>. To keep things simple webapp talks directly to API without a custom backend.</p>
+		<p className='mt-0'>Interactive webapp designed to show readers the next 100 rocket launches. All data curtesy of <a href='https://thespacedevs.com/'>The Space Devs</a>. To keep things simple webapp talks directly to API without a custom backend.</p>
 		<p className='font-bold m-0 p-0'>Tech</p>
 		<div className='space-x-1 space-y-1'>
 			<Chip label="React"

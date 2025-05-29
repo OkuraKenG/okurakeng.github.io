@@ -4,6 +4,7 @@ import { timelineItemClasses } from '@mui/lab/TimelineItem';
 import Tutor from './experiences/Tutor';
 import Iona from './experiences/Iona';
 import Phormulary from './experiences/Phormulary';
+import BlueCoLab from './experiences/BlueCoLab';
 
 export default function ExperiencesTimeline() {
 	return (
@@ -16,6 +17,7 @@ export default function ExperiencesTimeline() {
 				},
 			}}
 		>
+			<BlueCoLab />
 			<Phormulary />
 			<Iona />
 			<Tutor />
