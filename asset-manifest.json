@@ -1,23 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.42e86564.css",
-    "main.js": "/static/js/main.14bfdae4.js",
-    "static/media/titleScreen.png": "/static/media/titleScreen.870f1bb07fb0241cf99c.png",
-    "static/media/datascreen.png": "/static/media/datascreen.0140524a13a1ce28e79a.png",
+    "main.js": "/static/js/main.a3a523b1.js",
+    "static/media/titleScreen.png": "/static/media/titleScreen.e8ef0f1753ec063e404d.png",
     "static/media/shiny.png": "/static/media/shiny.c5b224d644301d44d5f8.png",
+    "static/media/datascreen.png": "/static/media/datascreen.76302a25f37cb3b1bdf7.png",
     "static/media/next100.png": "/static/media/next100.553f6b3fa4d9151b6546.png",
-    "static/media/meow.jpg": "/static/media/meow.2496a512f064c044ee7f.jpg",
+    "static/media/build.png": "/static/media/build.abce2f268c87b4d68e67.png",
     "static/media/ionic.png": "/static/media/ionic.a7a4a2f42024ba5caf91.png",
     "static/media/r.png": "/static/media/r.29787edafcb7ce4d392f.png",
-    "static/media/build.png": "/static/media/build.05cd1c76b9f5490aaba1.png",
     "static/media/plotly.png": "/static/media/plotly.1eac0216e44028e8de04.png",
     "static/media/js.png": "/static/media/js.266bd9fb2663dcc057b4.png",
     "index.html": "/index.html",
     "main.42e86564.css.map": "/static/css/main.42e86564.css.map",
-    "main.14bfdae4.js.map": "/static/js/main.14bfdae4.js.map"
+    "main.a3a523b1.js.map": "/static/js/main.a3a523b1.js.map"
   },
   "entrypoints": [
     "static/css/main.42e86564.css",
-    "static/js/main.14bfdae4.js"
+    "static/js/main.a3a523b1.js"
   ]
 }
