@@ -163,7 +163,7 @@ export default function BasicTabs({ togglePanelVisibility }: BasicTabsProps) {
 						<ul>
 							<li><a href="mailto:okurakeng@gmail.com">Email</a> (📧)</li>
 							<li><a href="https://www.linkedin.com/in/kenji-okura/">Linkedin</a> (👤)</li>
-							<li><a href="https://github.com/OkayKenji/">GitHub</a> (🎉)</li>
+							<li><a href="https://github.com/okurakeng/">GitHub</a> (🎉)</li>
 						</ul>
 					</div>
 				</TabPanel>

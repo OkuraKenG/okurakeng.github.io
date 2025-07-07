@@ -22,7 +22,7 @@ export default function Next100({ togglePanelVisibility }: Next100Props) {
 		</TimelineSeparator>
 		<TimelineContent>
 			<div className='flow-root'>
-				<p className='p-1 m-0 float-left font-bold'><i>Next 100 Launches!</i> (<a href='https://okaykenji.github.io/Data/'>view</a>)</p>
+				<p className='p-1 m-0 float-left font-bold'><i>Next 100 Launches!</i> (<a href='https://okurakeng.github.io/Data/'>view</a>)</p>
 				<p className=' p-1 pl-2 m-0 font-bold float-right'>Nov. 2023 - Jan. 2024</p>
 			</div>
 			<p className=' p-1 pl-2 m-0 text-sm'>A webapp to display the next 100 (and past 100) launches.</p>

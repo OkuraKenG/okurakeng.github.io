@@ -1,8 +1,8 @@
 {
-	"name": "okaykenji.github.io",
+	"name": "okurakeng.github.io",
 	"version": "5.0.0",
 	"private": true,
-	"homepage": "https://okaykenji.github.io/",
+	"homepage": "https://okurakeng.github.io/",
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
