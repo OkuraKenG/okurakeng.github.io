@@ -21,7 +21,7 @@ export default function TitleCard() {
 				<div className='text-lg'>My Contact:</div>
 				<div>📧 <a href="mailto:okurakeng@gmail.com">Email</a></div>
 				<div>👤 <a href="https://www.linkedin.com/in/kenji-okura/">Linkedin</a></div>
-				<div>👨‍💻 <a href="https://github.com/OkayKenji/">GitHub</a></div>
+				<div>👨‍💻 <a href="https://github.com/okurakeng/">GitHub</a></div>
 			</div>
 		</Grid>}
 	</Grid>

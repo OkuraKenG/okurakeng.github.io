@@ -28,7 +28,7 @@ export default function LeftAlignedTimeline({ togglePanelVisibility }: LeftAlign
 
 			<FP />
 
-			<p className='text-white'>You can find my other projects on my <a href='https://github.com/OkayKenji?tab=repositories'>GitHub</a>.</p>
+			<p className='text-white'>You can find my other projects on my <a href='https://github.com/okurakeng?tab=repositories'>GitHub</a>.</p>
 		</Timeline>
 	);
 }
