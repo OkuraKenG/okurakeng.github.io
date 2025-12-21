@@ -9,6 +9,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <meta name="google-site-verification" content="cuhph8Rq01ITPXiqWkJ23hKWKjm8c9NUgmXdoQnUYmY" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         {/*
