@@ -1,0 +1,15 @@
+{
+  // Enable ESLint auto-fix on save
+  "editor.codeActionsOnSave": {
+	"source.fixAll.eslint": "explicit"
+  },
+  // Ensure files end with a newline
+  "files.insertFinalNewline": true,
+  // Enforce tab indentation
+  "editor.tabSize": 4,
+  "editor.detectIndentation": false, // Ensure the setting is not overridden by file content
+  "editor.insertSpaces": false, // Use tabs, not spaces
+  // ESLint integration
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true
+}
