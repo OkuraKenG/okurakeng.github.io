@@ -1,6 +1,4 @@
-import { useRef } from "react";
-
-import { ReactNode, ButtonHTMLAttributes } from "react";
+import { useRef, ReactNode, ButtonHTMLAttributes } from "react";
 
 export default function RippleButton({
 	children,
