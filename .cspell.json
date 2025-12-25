@@ -1,0 +1,26 @@
+{
+  "ignorePaths": [
+    "node_modules/*",
+    "dist/*",
+    "build/*",
+    "coverage/*",
+    "android/*",
+    "ios/*",
+    ".expo/*",
+    ".vscode/*",
+    "public/p5.min.js"
+  ],
+  "ignoreWords": [],
+  "words": [
+    "colour",
+    "Kenji",
+    "nativewind",
+    "Okura",
+    "okurakeng",
+    "Pressable",
+    "swingyness",
+    "worklets",
+    "Phormulary",
+    "mpublished"
+  ]
+}

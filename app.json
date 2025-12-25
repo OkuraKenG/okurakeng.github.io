@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "okurakeng.github.io",
-    "slug": "okurakeng.github.io",
+    "slug": "okurakeng-github-io",
     "version": "1.0.0",
     "scheme": "okurakeng.github.io",
     "platforms": ["web"],
@@ -10,18 +10,14 @@
       "output": "static",
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-router"],
+    "plugins": ["expo-router", "expo-font"],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

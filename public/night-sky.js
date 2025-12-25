@@ -1,152 +1,132 @@
-
 class NightSky {
-	constructor(x, y, stars) {
-		this.x = x;
-		this.y = y;
-		this.stars = stars || [];
-		this.satellites = [];
+  constructor(x, y, stars) {
+    this.x = x;
+    this.y = y;
+    this.stars = stars || [];
+    this.satellites = [];
 
-		this.terrains = [new Terrain(
-			random(65, 125),
-			random(0.001, 0.02),
-			25,
-			color(1))];
-		this.iss = new ISS(windowWidth / 2, document.documentElement.scrollHeight);
+    this.terrains = [new Terrain(random(65, 125), random(0.001, 0.02), 25, color(1))];
+    this.iss = new ISS(windowWidth / 2, document.documentElement.scrollHeight);
 
-		this.moon = new Moon(windowWidth / 4, document.documentElement.scrollHeight);
+    this.moon = new Moon(windowWidth / 4, document.documentElement.scrollHeight);
 
+    for (let i = 0; i < 750; i++) {
+      this.stars.push(
+        new NightStar(random(2.5, windowWidth > windowHeight ? windowWidth * 3 : windowHeight * 3))
+      );
+    }
 
-		for (let i = 0; i < 750; i++) {
-			this.stars.push(
-				new NightStar(
-					random(2.5, windowWidth > windowHeight ? windowWidth * 3 : windowHeight * 3))
-			)
-		}
+    for (let i = 0; i < 25; i++) {
+      this.satellites.push(new Satellite(random(windowWidth), random(windowHeight)));
+    }
+  }
 
-		for (let i = 0; i < 25; i++) {
-			this.satellites.push(
-				new Satellite(random(windowWidth), random(windowHeight))
-			)
-		}
-	}
+  draw() {
+    background(15, 0, 25);
 
-	draw() {
-		background(15, 0, 25);
+    fill(240);
+    circle(this.x, this.y, 2);
 
-		fill(240);
-		circle(this.x, this.y, 2);
+    for (const star of this.stars) {
+      star.draw(this.x, this.y);
+    }
 
-		for (const star of this.stars) {
-			star.draw(this.x, this.y);
-		}
+    for (const satellite of this.satellites) {
+      satellite.draw();
+    }
 
-		for (const satellite of this.satellites) {
-			satellite.draw();
-		}
+    this.iss.draw();
+    this.moon.draw();
 
-		this.iss.draw();
-		this.moon.draw();
-
-
-		for (const terrain of this.terrains) {
-			terrain.draw();
-		}
-
-
-
-
-
-	}
+    for (const terrain of this.terrains) {
+      terrain.draw();
+    }
+  }
 }
 
 class NightStar {
-	constructor(distance, deg, fill, size) {
+  constructor(distance, deg, fill, size) {
+    this.deg = deg || random(0, 360);
+    this.distance = distance;
+    this.fill = fill || color(random(50, 150));
+    this.size = size || random(1, 2);
+    this.x = 0;
+    this.y = 0;
+  }
 
-		this.deg = deg || random(0, 360);
-		this.distance = distance;
-		this.fill = fill || color(random(50, 150));
-		this.size = size || random(1, 2);
-		this.x = 0;
-		this.y = 0;
-	}
+  draw(x, y) {
+    noStroke();
+    fill(this.fill);
+    this.x = x + this.distance * cos(this.deg);
+    this.y = y + this.distance * sin(this.deg);
 
-	draw(x, y) {
-		noStroke();
-		fill(this.fill);
-		this.x = x + (this.distance) * cos(this.deg);
-		this.y = y + (this.distance) * sin(this.deg);
-
-		circle(this.x, this.y, this.size + Math.random() * 0.75);
-		this.deg += 0.01;
-	}
+    circle(this.x, this.y, this.size + Math.random() * 0.75);
+    this.deg += 0.01;
+  }
 }
 
 class Satellite {
-
-	constructor(x, y) {
-
-		this.delay = random(0, 5000)
-		this.startX = x;
-		this.startY = y;
-		this.x = x;
-		this.y = y;
-		this.v_x = random([-1, 1]);
-		this.v_y = random([-1, 1]);
-		this.distance = random(windowHeight * 0.25, windowHeight * 0.35)
-	}
-	draw() {
-		strokeWeight(0.6);
-		if ((frameCount > this.delay) && dist(this.startX, this.startY, this.x, this.y) < this.distance) {
-			this.x = this.x + this.v_x;
-			this.y = this.y + this.v_y;
-			fill(color(sin(0.95 * frameCount + sin(frameCount)) * 255))
-			circle(this.x, this.y, sin(0.95 * frameCount + sin(frameCount)) * 4);
-		}
-	}
-
+  constructor(x, y) {
+    this.delay = random(0, 5000);
+    this.startX = x;
+    this.startY = y;
+    this.x = x;
+    this.y = y;
+    this.v_x = random([-1, 1]);
+    this.v_y = random([-1, 1]);
+    this.distance = random(windowHeight * 0.25, windowHeight * 0.35);
+  }
+  draw() {
+    strokeWeight(0.6);
+    if (frameCount > this.delay && dist(this.startX, this.startY, this.x, this.y) < this.distance) {
+      this.x = this.x + this.v_x;
+      this.y = this.y + this.v_y;
+      fill(color(sin(0.95 * frameCount + sin(frameCount)) * 255));
+      circle(this.x, this.y, sin(0.95 * frameCount + sin(frameCount)) * 4);
+    }
+  }
 }
 
 class ISS {
-	constructor(x, y) {
-		this.startX = x;
-		this.startY = y;
-		this.x = x;
-		this.y = y;
+  constructor(x, y) {
+    this.startX = x;
+    this.startY = y;
+    this.x = x;
+    this.y = y;
 
-		this.v_x = random([-0.25, 0.25]);
-		this.v_y = -0.25;
-		this.distance = random(windowHeight * 0.25, windowHeight * 0.35)
-	}
-	draw() {
-		strokeWeight(0.6);
+    this.v_x = random([-0.25, 0.25]);
+    this.v_y = -0.25;
+    this.distance = random(windowHeight * 0.25, windowHeight * 0.35);
+  }
+  draw() {
+    strokeWeight(0.6);
 
-		this.x = this.x + this.v_x;
-		this.y = this.y + this.v_y;
-		fill(255)
-		textSize(5);
-		text('🛰️', this.x, this.y)
-	}
+    this.x = this.x + this.v_x;
+    this.y = this.y + this.v_y;
+    fill(255);
+    textSize(5);
+    text('🛰️', this.x, this.y);
+  }
 }
 
 class Moon {
+  constructor(x, y) {
+    this.startX = x;
+    this.startY = y;
+    this.x = x;
+    this.y = y;
 
-	constructor(x, y) {
-		this.startX = x;
-		this.startY = y;
-		this.x = x;
-		this.y = y;
+    this.v_x = random([-0.05, 0.05]);
+    this.v_y = -0.05;
+    this.distance = random(windowHeight * 0.25, windowHeight * 0.35);
+  }
+  draw() {
+    strokeWeight(0.6);
 
-		this.v_x = random([-0.05, 0.05]);
-		this.v_y = -0.05;
-		this.distance = random(windowHeight * 0.25, windowHeight * 0.35)
-	}
-	draw() {
-		strokeWeight(0.6);
-
-		this.x = this.x + this.v_x;
-		this.y = this.y + this.v_y;
-		fill(255)
-		textSize(12);
-		text('🌕', this.x, this.y)
-	}
+    this.x = this.x + this.v_x;
+    this.y = this.y + this.v_y;
+    fill(255);
+    textSize(12);
+    text('🌕', this.x, this.y);
+  }
 }
