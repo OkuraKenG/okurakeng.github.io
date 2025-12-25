@@ -2,7 +2,7 @@
   // Enable ESLint auto-fix on save
   "editor.codeActionsOnSave": {
 	"source.fixAll.eslint": "explicit"
-},
+  },
   // Ensure files end with a newline
   "files.insertFinalNewline": true,
   // Enforce tab indentation

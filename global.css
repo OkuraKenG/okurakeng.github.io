@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div {
+	scrollbar-width: thin;
+	scrollbar-color: #9f9f9f rgba(48, 48, 48, 0.9);
+}
+
+
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
