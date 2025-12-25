@@ -1,12 +1,22 @@
-import P5Background from '@/components/P5Background';
-import SkiaPlanetExample from '@/components/SkiaPlanetExample';
+import Head from 'expo-router/head';
 import { View } from 'react-native';
+
+import { HeaderCard } from '@/components/cards/HeaderCard';
+import { BodyCard } from '@/components/cards/BodyCard';
 
 export default function Home() {
 	return (
-		<View>
-			{/* <P5Background /> */}
-			{/* <SkiaPlanetExample /> */}
-		</View>
+		<>
+			<Head>
+				<title>okurakeng.github.io</title>
+			</Head>
+
+			<View className="flex flex-1 lg:w-1/2 p-4">
+				<HeaderCard />
+				<View className="mt-4">
+					<BodyCard />
+				</View>
+			</View>
+		</>
 	);
 }
