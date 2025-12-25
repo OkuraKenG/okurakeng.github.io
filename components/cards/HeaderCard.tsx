@@ -2,7 +2,7 @@ import { View, Text, Linking } from 'react-native';
 import { Hr } from '@/components/Hr';
 
 export const HeaderCard = () => {
-	return (<View className="items-center p-4 backdrop-blur-sm rounded-3xl bg-[rgba(255,192,20,0.1)]">
+	return (<View className="items-center p-4 backdrop-blur-md rounded-3xl bg-[rgba(255,192,20,0.1)]">
 		<Text className='lg:text-7xl text-white font-bold mb-3 text-center text-4xl'>Kenji Okura</Text>
 		<Hr />
 		<Text className="lg:text-xl text-lg flex flex-row items-center space-x-1">
