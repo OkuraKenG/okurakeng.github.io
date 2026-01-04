@@ -13,6 +13,7 @@ export default function Home() {
 
       <View className="flex flex-1 p-4 lg:w-1/2">
         <HeaderCard />
+
         <View className="mt-4">
           <BodyCard />
         </View>

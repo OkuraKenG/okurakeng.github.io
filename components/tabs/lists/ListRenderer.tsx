@@ -21,7 +21,8 @@ export const ListRenderer = ({ data }: { data: ListType[] }) => {
               {item.experience && (
                 <View>
                   <Text className="text-xl font-bold text-white">
-                    {item.experience.role} @{' '}
+                    {item.experience.role}
+                    {' @ '}
                     <Pressable
                       className="underline"
                       onPress={() => Linking.openURL(item.experience.link)}>
@@ -42,8 +43,7 @@ export const ListRenderer = ({ data }: { data: ListType[] }) => {
                     </Pressable>
                     {item.project.preview ? (
                       <>
-                        {' '}
-                        |{' '}
+                        {' • '}
                         <Pressable
                           className="underline"
                           onPress={() => Linking.openURL(item.project.preview!)}>
