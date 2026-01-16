@@ -39,6 +39,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
             left: 0,
             width: '100vw',
             zIndex: 1,
+            height: '100dvh',
           }}>
           {children}
         </div>
