@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container';
-import { Link, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 
 import { Text, View } from 'react-native';
 
