@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Pressable, Linking, FlatList } from 'react-native';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome from "@react-native-vector-icons/fontawesome";
 
 import { DateRange, ListType } from '@/types/ListTypes';
 
