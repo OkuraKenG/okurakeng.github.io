@@ -9,7 +9,8 @@
     "ios/*",
     ".expo/*",
     ".vscode/*",
-    "public/p5.min.js"
+    "public/p5.min.js",
+    "package.json",
   ],
   "ignoreWords": [],
   "words": [
@@ -23,6 +24,7 @@
     "picomatch",
     "Pressable",
     "swingyness",
-    "worklets"
+    "worklets",
+    "xmldom"
   ]
 }
