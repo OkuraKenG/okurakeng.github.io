@@ -10,7 +10,7 @@
     ".expo/*",
     ".vscode/*",
     "public/p5.min.js",
-    "package.json",
+    "package.json"
   ],
   "ignoreWords": [],
   "words": [
