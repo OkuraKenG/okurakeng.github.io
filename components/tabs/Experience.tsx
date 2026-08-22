@@ -5,6 +5,20 @@ import { ListType } from '@/types/ListTypes';
 
 export const Experience = () => {
   const experiences: ListType[] = [
+     {
+      experience: {
+        location: 'IBM',
+        role: 'Software Developer',
+        link: 'https://www.ibm.com/case-studies/cio-office-turbonomic',
+      },
+      dates: [
+        {
+          start: 'June 2026',
+          end: 'Present',
+        },
+      ],
+      description: 'Full time full stack developer for an internal project under F&O/CIO.',
+    },
     {
       experience: {
         location: 'IBM',
@@ -18,7 +32,7 @@ export const Experience = () => {
         },
         {
           start: 'Sept. 2025',
-          end: 'Present',
+          end: 'June 2026',
         },
       ],
       description: 'Full stack developer for an internal project under F&O/CIO.',
