@@ -5,7 +5,7 @@ import { ListType } from '@/types/ListTypes';
 
 export const Experience = () => {
   const experiences: ListType[] = [
-     {
+    {
       experience: {
         location: 'IBM',
         role: 'Software Developer',
