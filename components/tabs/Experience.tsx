@@ -8,6 +8,20 @@ export const Experience = () => {
     {
       experience: {
         location: 'IBM',
+        role: 'Software Developer',
+        link: 'https://www.ibm.com/case-studies/cio-office-turbonomic',
+      },
+      dates: [
+        {
+          start: 'June 2026',
+          end: 'Present',
+        },
+      ],
+      description: 'Full time full stack developer for an internal project under F&O/CIO.',
+    },
+    {
+      experience: {
+        location: 'IBM',
         role: 'Software Development Intern',
         link: 'https://www.ibm.com/case-studies/cio-office-turbonomic',
       },
@@ -18,7 +32,7 @@ export const Experience = () => {
         },
         {
           start: 'Sept. 2025',
-          end: 'Present',
+          end: 'June 2026',
         },
       ],
       description: 'Full stack developer for an internal project under F&O/CIO.',

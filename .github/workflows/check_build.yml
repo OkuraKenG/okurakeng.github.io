@@ -79,7 +79,7 @@ jobs:
           path: ./node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
       - name: pnpm Audit
-        run: pnpm audit --audit-level=low
+        run: pnpm audit --audit-level=critical
 
   spellcheck:
     runs-on: ubuntu-latest
