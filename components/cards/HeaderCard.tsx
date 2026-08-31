@@ -29,7 +29,7 @@ export const HeaderCard = () => {
       </Text>
       <Hr />
       <Text className="text-center text-lg  text-white lg:text-xl">
-        Software Development Intern @ IBM
+        Software Developer @ IBM
       </Text>
       <Hr />
     </View>

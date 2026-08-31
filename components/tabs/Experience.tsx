@@ -9,7 +9,7 @@ export const Experience = () => {
       experience: {
         location: 'IBM',
         role: 'Software Developer',
-        link: 'https://www.ibm.com/case-studies/cio-office-turbonomic',
+        link: 'https://www.ibm.com/us-en',
       },
       dates: [
         {
@@ -23,7 +23,7 @@ export const Experience = () => {
       experience: {
         location: 'IBM',
         role: 'Software Development Intern',
-        link: 'https://www.ibm.com/case-studies/cio-office-turbonomic',
+        link: 'https://www.ibm.com/us-en',
       },
       dates: [
         {
