@@ -1,6 +1,9 @@
 body {
     font-family: 'Times New Roman', serif;
-    margin: 1em;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -22,6 +25,10 @@ a {
     pointer-events: painted;
 }
 
+.tab:last-child {
+    border-right: 1px solid #000;
+}
+
 .active {
     font-weight: bold;
 }
@@ -36,6 +43,52 @@ ul {
     margin-bottom: 0;
 }
 
-.tab:last-child {
-    border-right: 1px solid #000;
+/*
+Source - https://stackoverflow.com/a/20352949
+Posted by vsync, modified by community. See post 'Timeline' for change history
+Retrieved 2026-09-03, License - CC BY-SA 4.0
+*/
+
+footer {
+    min-height: 50px;
+}
+
+main {
+    flex: 1;
+    margin: 1em;
+}
+
+td {
+    padding-right: 0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        color: #fff;
+        font-weight: 100
+    }
+
+    b {
+        font-weight: 900;
+    }
+
+
+    a {
+        color: #fff;
+    }
+
+    .tab {
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+    }
+
+    .tab:last-child {
+        border-right: 1px solid #fff;
+    }
+
+    .view {
+        border: 1px solid #fff;
+    }
+
 }

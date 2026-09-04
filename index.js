@@ -2,7 +2,7 @@ console.log("yo");
 
 const tabs = [
   {
-    tabName: "Today",
+    tabName: "Work Experience",
     type: "role",
     roles: [
       {
@@ -17,12 +17,6 @@ const tabs = [
         startDate: "January 2025",
         endDate: "Present",
       },
-    ],
-  },
-  {
-    tabName: "Previously @",
-    type: "role",
-    roles: [
       {
         roleName: "Software Development Intern",
         companyName: "IBM",
@@ -81,9 +75,7 @@ function createRoleTab(tab) {
   const rolesTemplate = document.getElementById("roles-template");
 
   const rolesDiv = rolesTemplate.content.cloneNode(true);
-  rolesDiv.getElementById("tab-name").textContent = tab.tabName;
-
-  const rolesUl = document.createElement("ul");
+  const tb = rolesDiv.getElementById("table");
   for (const role of tab.roles) {
     const roleTemplate = role.href
       ? document.getElementById("role-template-href")
@@ -93,14 +85,14 @@ function createRoleTab(tab) {
     roleLi.querySelector(".company-name").textContent = role.companyName;
     roleLi.querySelector(".start-date").textContent = role.startDate;
     roleLi.querySelector(".end-date").textContent = role.endDate;
+    // roleLi.querySelector(".sym").textContent = "├─";
     if (role.href) {
       roleLi.querySelector(".company-name").href = role.href;
     }
-    rolesUl.appendChild(roleLi);
+    tb.appendChild(roleLi);
   }
 
-  rolesDiv.appendChild(rolesUl);
-  viewDiv.appendChild(rolesDiv);
+  viewDiv.appendChild(tb);
 }
 
 function createContactTab(tab) {

@@ -8,33 +8,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>okurakeng.github.io</title>
     <link rel="stylesheet" href="styles.css">
+
     <template id="contact-template">
         <li><a href="" target="_blank" class="contact-value"></a> (<span class="contact-value"></span>)</li>
     </template>
     <template id="contacts-template">
         <b id="tab-name">You can reach me at:</b>
     </template>
+
+
     <template id="role-template">
-        <li><span class="role-name"></span> @ <span class="company-name"></span> (<span class="start-date"></span> -
-            <span class="end-date"></span>)
-        </li>
+        <tr>
+            <td>
+                <div><span class="start-date"></span> - <span class="end-date"></span></div>
+            </td>
+            <td>
+                <div><span class="role-name"></span> @ <span class="company-name"></div>
+            </td>
+        </tr>
     </template>
+
     <template id="role-template-href">
-        <li><span class="role-name"></span> @ <a href="" target="_blank" class="company-name"></a> (<span
-                class="start-date"></span> -
-            <span class="end-date"></span>)
-        </li>
+        <tr>
+            <td>
+                <div><span class="start-date"></span> - <span class="end-date"></span></div>
+            </td>
+            <td>
+                <div><span class="role-name"></span> @ <a href="" target="_blank" class="company-name"></a></div>
+            </td>
+        </tr>
     </template>
+
     <template id="roles-template">
-        <b id="tab-name"></b>
+        <table>
+            <tbody id="table">
+            </tbody>
+        </table>
     </template>
 </head>
 
 <body>
-    <h1>Kenji Okura</h1>
 
-    <div id="tabs" style=" display: flex;"></div>
-    <div id="view" class="view"></div>
+    <main>
+        <h1>Kenji Okura</h1>
+
+        <div id="tabs" style=" display: flex;"></div>
+        <div id="view" class="view"></div>
+    </main>
+
+
+    <footer>
+        <details>
+            <summary>
+                Why so basic?
+            </summary>
+            Why not?
+        </details>
+    </footer>
     <script src="index.js"></script>
 </body>
 
