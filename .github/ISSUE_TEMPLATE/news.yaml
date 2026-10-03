@@ -1,0 +1,41 @@
+name: News Item Creation
+description: File a request for a news item to be created.
+title: "[New item]: "
+labels: ["to be reviewed"]
+
+body:
+  - type: input
+    id: news-title
+    attributes:
+      label: What is the title?
+      description: This is what appears in the feed
+      placeholder: News!
+    validations:
+      required: true
+
+  - type: input
+    id: news-author
+    attributes:
+      label: Who is the author?
+      description: Put the author of the post here
+      placeholder: John Cronin
+    validations:
+      required: true
+
+  - type: textarea
+    id: news-detail
+    attributes:
+      label: What are the details?
+      description: This is where you would put the body of the report
+      placeholder: News news news
+    validations:
+      required: true
+
+  - type: upload
+    id: screenshots
+    attributes:
+      label: Upload image
+      description: If applicable, add a news image
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp"
